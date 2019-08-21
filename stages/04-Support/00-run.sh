@@ -10,6 +10,9 @@ pushd GIT
 
 MNT_DIR="${STAGE_WORK_DIR}/mnt"
 
+log "Download LiFePO4wered-pi"
+git clone https://github.com/xorbit/LiFePO4wered-Pi.git
+
 log "Download Raspi2png"
 git clone https://github.com/AndrewFromMelbourne/raspi2png.git
 
