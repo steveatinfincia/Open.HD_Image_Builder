@@ -167,6 +167,46 @@
 #define WARNING_POS_X 50
 #define WARNING_POS_Y 25
 
+
+#define LIFEPO4WEREDPI false // set to true if using LiFePO4wered Pi on ground station
+
+#define GROUND_POWER_EXTERNAL_BATT false
+#define GROUND_POWER_EXTERNAL_BATT_GAUGE_POS_X 13
+#define GROUND_POWER_EXTERNAL_BATT_GAUGE_POS_Y 5
+#define GROUND_POWER_EXTERNAL_BATT_GAUGE_SCALE 1
+#define GROUND_POWER_EXTERNAL_BATT_CELLS 3 // set to number of cells used
+#define GROUND_POWER_EXTERNAL_BATT_CELL_MAX 4.20 // maximum cell voltage
+#define GROUND_POWER_EXTERNAL_BATT_CELL_MIN 3.20 // minimum cell voltage
+#define GROUND_POWER_EXTERNAL_BATT_CELL_WARNING1 3.50 // warning level 1 -> orange, low
+#define GROUND_POWER_EXTERNAL_BATT_CELL_WARNING2 3.40 // warning level 2 -> red, critical
+
+
+#define GROUND_POWER_INTERNAL_BATT_GAUGE false
+#define GROUND_POWER_INTERNAL_BATT_GAUGE_POS_X 25
+#define GROUND_POWER_INTERNAL_BATT_GAUGE_POS_Y 5
+#define GROUND_POWER_INTERNAL_BATT_GAUGE_SCALE 1
+// For LiFePO4wered Pi board, set these to 1 cell, max 3.65, min 2.85 with warnings at 3.15 and 3.00
+// for LiPO use 2-4 cells (whichever matches), 4.20 max, 3.20 min, warnings at 3.5 and 3.4 
+#define GROUND_POWER_INTERNAL_BATT_CELLS 1 // set to number of cells used
+#define GROUND_POWER_INTERNAL_BATT_CELL_MAX 3.65 // maximum cell voltage
+#define GROUND_POWER_INTERNAL_BATT_CELL_MIN 2.85 // minimum cell voltage
+#define GROUND_POWER_INTERNAL_BATT_CELL_WARNING1 3.15 // warning level 1 -> orange, low
+#define GROUND_POWER_INTERNAL_BATT_CELL_WARNING2 3.00 // warning level 2 -> red, critical
+
+
+
+#define GROUND_POWER_IN false // set to false if you dont want to see this
+#define GROUND_POWER_IN_POS_X 18
+#define GROUND_POWER_IN_POS_Y 12
+#define GROUND_POWER_IN_SCALE 1
+//#define GROUND_POWER_VIN_IS_EXTERNAL_BATTERY true // uncomment if ground station has an external battery
+
+#define GROUND_POWER_OUT false // set to false if you dont want to see this
+#define GROUND_POWER_OUT_POS_X 30
+#define GROUND_POWER_OUT_POS_Y 12
+#define GROUND_POWER_OUT_SCALE 1
+
+
 // display of TOTALS
 #define TOTAL_AMPS true // set to false if you dont want to see this
 #define TOTAL_AMPS_POS_X 24
