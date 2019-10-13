@@ -6,6 +6,12 @@ rm -r GIT || true
 
 mkdir -p GIT
 
+# building outside of GIT so that this giant build tree doesn't get copied into the image
+if [ ! -f qt-everywhere-src-5.13.1.tar.xz ]; then
+	log "Download Qt 5.13.1"
+	wget http://download.qt.io/official_releases/qt/5.13/5.13.1/single/qt-everywhere-src-5.13.1.tar.xz
+fi
+
 pushd GIT
 
 MNT_DIR="${STAGE_WORK_DIR}/mnt"

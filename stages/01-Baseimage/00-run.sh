@@ -2,11 +2,11 @@
 pushd ${STAGE_WORK_DIR}
 
 log "Clear any previous images"
-rm *.zip
-rm *.img
+#rm *.zip
+#rm *.img
 
-log "Download Raspbian base Image"
-wget $BASE_IMAGE_URL/$BASE_IMAGE".zip"
+#log "Download Raspbian base Image"
+#wget $BASE_IMAGE_URL/$BASE_IMAGE".zip"
 
 log "Unzip"
 unzip $BASE_IMAGE".zip"

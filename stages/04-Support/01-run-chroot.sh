@@ -44,6 +44,7 @@ gcc build/DAEMON/lifepo4wered-access.o build/DAEMON/lifepo4wered-data.o build/DA
 gcc build/SO/lifepo4wered-access.o build/SO/lifepo4wered-data.o -o build/SO/liblifepo4wered.so -shared
 gcc build/CLI/lifepo4wered-access.o build/CLI/lifepo4wered-data.o build/CLI/lifepo4wered-cli.o -o build/CLI/lifepo4wered-cli
 ./INSTALL.sh
+cd ..
 
 apt-get --yes --force-yes install gstreamer1.0-alsa
 

@@ -14,6 +14,7 @@ DEBIAN_FRONTEND=noninteractive sudo apt-get -yq install raspberrypi-kernel-heade
 # Latest package source
 # sudo rm -rf /var/lib/apt/lists/*
 # sudo apt-get clean
+echo "deb-src http://raspbian.raspberrypi.org/raspbian/ stretch main contrib non-free rpi" >> sudo tee /etc/apt/sources.list
 sudo apt-get update
 
 # Install essentials
@@ -62,6 +63,9 @@ DEBIAN_FRONTEND=noninteractive sudo apt-get -yq install libsdl2-dev
 DEBIAN_FRONTEND=noninteractive sudo apt-get -yq install libsdl1.2-dev
 DEBIAN_FRONTEND=noninteractive sudo apt-get -yq install libav-tools
 
+# text to speech for QOpenHD
+DEBIAN_FRONTEND=noninteractive sudo apt-get -yq install libspeechd-dev flite1-dev flite speech-dispatcher-flite --no-install-recommends
+
 #Arducam Multi Camera Adapter Module V2.1
 DEBIAN_FRONTEND=noninteractive sudo apt-get -yq install  i2c-tools
 
@@ -82,7 +86,6 @@ DEBIAN_FRONTEND=noninteractive sudo apt-get -yq purge cron
 #DEBIAN_FRONTEND=noninteractive sudo apt-get -yq purge isc-dhcp-client
 #DEBIAN_FRONTEND=noninteractive sudo apt-get -yq purge isc-dhcp-common
 
-
 # Remove packages for space savings
 DEBIAN_FRONTEND=noninteractive sudo apt-get -yq purge apt-transport-https
 DEBIAN_FRONTEND=noninteractive sudo apt-get -yq purge aptitude
@@ -101,3 +104,10 @@ DEBIAN_FRONTEND=noninteractive sudo apt-get -yq autoremove
 sudo pip install future
 #Python3 GPIO
 sudo apt-get -y install python3-rpi.gpio
+
+# installs all dependencies for these packages so Qt itself can be built from source
+DEBIAN_FRONTEND=noninteractive sudo apt-get build-dep libqt5gui5
+DEBIAN_FRONTEND=noninteractive sudo apt-get install libudev-dev libinput-dev libts-dev
+
+apt-get -y clean
+apt-get -y autoremove

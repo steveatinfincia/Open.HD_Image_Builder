@@ -1,0 +1,10 @@
+[Unit]
+Description=QOpenHD
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/QOpenHD
+
+[Install]
+WantedBy=multi-user.target

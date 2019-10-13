@@ -11,10 +11,12 @@ pushd GIT
 MNT_DIR="${STAGE_WORK_DIR}/mnt"
 
 log "Download all Open.HD Sources"
-sudo git clone -b development https://github.com/HD-Fpv/Open.HD.git
-pushd Open.HD
+#sudo git clone -b groundstatus https://github.com/infincia/Open.HD.git
+sudo cp -a /media/psf/SourceCache/openhd/Open.HD Open.HD
+cd Open.HD
+sudo git checkout groundstatus
 sudo git submodule update --init
-popd
+cd ..
 
 log "Download OpenVG"
 sudo mv Open.HD/openvg/ openvg/
